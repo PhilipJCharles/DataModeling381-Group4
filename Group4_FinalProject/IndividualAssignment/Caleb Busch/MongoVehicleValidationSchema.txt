@@ -1,0 +1,117 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      'Make',
+      'Model',
+      'Stock'
+    ],
+    "properties": {
+      "Make": {
+        "bsonType": "object",
+        "required": [
+          'MakeName',
+          'Country',
+          'MarketingType'
+        ],
+        "properties": {
+          "MakeName": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]+$"
+          },
+          "Country": {
+            "bsonType": "object",
+            "required": [
+              'CountryISO3',
+              'CountryName',
+              'CountryISO2',
+              'SalesRegion'
+            ],
+            "properties": {
+              "CountryISO3": {
+                "bsonType": "string",
+                "pattern": "^[A-Za-z]+$"
+              },
+              "CountryName": {
+                "bsonType": "string",
+                "pattern": "^[A-Za-z]+$"
+              },
+              "CountryISO2": {
+                "bsonType": "string",
+                "pattern": "^[A-Za-z]+$"
+              },
+              "SalesRegion": {
+                "bsonType": "string",
+                "pattern": "^[A-Za-z]+$"
+              }
+            }
+          },
+          "MarketingType": {
+            "bsonType": "object",
+            "required": [
+              'Type'
+            ],
+            "properties": {
+              "Type": {
+                "bsonType": "string",
+                "pattern": "^[A-Za-z]+$"
+              }
+            }
+          }
+        }
+      },
+      "Model": {
+        "bsonType": "object",
+        "required": [
+          'ModelName'
+        ],
+        "properties": {
+          "ModelName": {
+            "bsonType": "string"
+          }
+        }
+      },
+      "Stock": {
+        "bsonType": "object",
+        "required": [
+          'StockCode',
+          'Cost',
+          'RepairsCharge',
+          'DeliveryCharge',
+          'IsPremiumRoadHandlingPackage',
+          'VehicleColor',
+          'CustomerComments',
+          'PurchaseDate'
+        ],
+        "properties": {
+          "StockCode": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]+$"
+          },
+          "Cost": {
+            "bsonType": "double"
+          },
+          "RepairsCharge": {
+            "bsonType": "double"
+          },
+          "DeliveryCharge": {
+            "bsonType": "double"
+          },
+          "IsPremiumRoadHandlingPackage": {
+            "bsonType": "bool"
+          },
+          "VehicleColor": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]+$"
+          },
+          "CustomerComments": {
+            "bsonType": "string"
+          },
+          "PurchaseDate": {
+            "bsonType": "date"
+          }
+        }
+      }
+    }
+  }
+}

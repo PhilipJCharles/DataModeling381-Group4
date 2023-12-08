@@ -1,0 +1,76 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      'name',
+      'department',
+      'country',
+      'managerID'
+    ],
+    "properties": {
+      "name": {
+        "bsonType": "string",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "department": {
+        "bsonType": "object",
+        "required": [
+          'DepartmentName'
+        ],
+        "properties": {
+          "DepartmentName": {
+            "bsonType": "string"
+          }
+        }
+      },
+      "country": {
+        "bsonType": "object",
+        "required": [
+          'CountryISO3',
+          'CountryName',
+          'CountryISO2',
+          'SalesRegion'
+        ],
+        "properties": {
+          "CountryISO3": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]{3}$"
+          },
+          "CountryName": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]+$"
+          },
+          "CountryISO2": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]{2}$"
+          },
+          "SalesRegion": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]+$"
+          }
+        }
+      },
+      "managerID": {
+        "bsonType": "objectId"
+      },
+      "CustomerIDs": {
+        "bsonType": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "bsonType": "objectId"
+        }
+      },
+      "SalesIDs": {
+        "bsonType": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "bsonType": "objectId"
+        }
+      }
+    }
+  }
+}

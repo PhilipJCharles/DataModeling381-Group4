@@ -1,0 +1,111 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      'firstname',
+      'lastname',
+      'fullname',
+      'streetnumber',
+      'streetname',
+      'town',
+      'postalcode',
+      'IsCustomerReseller',
+      'IsCustomerCreditRisk',
+      'SpendCapacity',
+      'country'
+    ],
+    "properties": {
+      "firstname": {
+        "bsonType": "string",
+        "description": "First name of the customer",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "lastname": {
+        "bsonType": "string",
+        "description": "Last name of the customer",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "fullname": {
+        "bsonType": "string",
+        "description": "Full name of the customer",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "streetnumber": {
+        "bsonType": "string"
+      },
+      "streetname": {
+        "bsonType": "string",
+        "description": "Name of the street",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "town": {
+        "bsonType": "string",
+        "description": "Name of the town",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "postalcode": {
+        "bsonType": "string",
+        "description": "Postal code",
+        "pattern": "^[0-9]+$"
+      },
+      "IsCustomerReseller": {
+        "bsonType": "bool"
+      },
+      "IsCustomerCreditRisk": {
+        "bsonType": "bool"
+      },
+      "SpendCapacity": {
+        "bsonType": "string",
+        "enum": [
+          "Lots",
+          "Some",
+          "Immense",
+          "None"
+        ],
+        "description": "Customer spend capacity"
+      },
+      "country": {
+        "bsonType": "object",
+        "required": [
+          "CountryISO3",
+          "CountryName",
+          "CountryISO2",
+          "SalesRegion"
+        ],
+        "properties": {
+          "CountryISO3": {
+            "bsonType": "string",
+            "pattern": "^[A-Za-z]{3}$"
+          },
+          "CountryName": {
+            "bsonType": "string"
+          },
+          "CountryISO2": {
+            "bsonType": "string"
+          },
+          "SalesRegion": {
+            "bsonType": "string"
+          }
+        }
+      },
+      "VehicleID": {
+        "bsonType": [
+          "objectId",
+          "null"
+        ]
+      },
+      "StaffID": {
+        "bsonType": [
+          "objectId",
+          "null"
+        ]
+      },
+      "SalesID": {
+        "bsonType": [
+          "objectId",
+          "null"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      'InvoiceNumber',
+      'SaleDate',
+      'LowerThreshold',
+      'UpperThreshold',
+      'CategoryDescription',
+      'OrderDetail',
+      'CustomerID',
+      'StaffID',
+      'VehicleID'
+    ],
+    "properties": {
+      "InvoiceNumber": {
+        "bsonType": "string",
+        "pattern": "^[A-Za-z0-9]+$"
+      },
+      "SaleDate": {
+        "bsonType": "date"
+      },
+      "LowerThreshold": {
+        "bsonType": "double"
+      },
+      "UpperThreshold": {
+        "bsonType": "double"
+      },
+      "CategoryDescription": {
+        "bsonType": "string",
+        "pattern": "^[A-Za-z]+$"
+      },
+      "OrderDetail": {
+        "bsonType": "object",
+        "required": [
+          'LineItemNumber',
+          'LineItemDiscount',
+          'DerivedDiscountedSalePrice'
+        ],
+        "properties": {
+          "LineItemNumber": {
+            "bsonType": "int"
+          },
+          "LineItemDiscount": {
+            "bsonType": "double"
+          },
+          "DerivedDiscountedSalePrice": {
+            "bsonType": "double"
+          }
+        }
+      },
+      "CustomerID": {
+        "bsonType": "objectId"
+      },
+      "StaffID": {
+        "bsonType": "objectId"
+      },
+      "VehicleID": {
+        "bsonType": "objectId"
+      }
+    }
+  }
+}
